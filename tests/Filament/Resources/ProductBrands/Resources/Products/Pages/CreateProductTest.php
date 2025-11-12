@@ -16,7 +16,8 @@ test('creates product ok', function () {
     $this->assertDatabaseCount('products', 0);
 
     Livewire::test(CreateProduct::class, [
-        'record' => $productBrand
+        'record' => $productBrand,
+        'parentRecord' => $productBrand,
     ])
         ->assertOk()
         ->fillForm([
